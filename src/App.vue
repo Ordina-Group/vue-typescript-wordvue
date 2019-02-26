@@ -1,20 +1,41 @@
 <template>
 	<div id="app">
-		<img alt="Vue logo" src="./assets/logo.png">
-		<HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+		<h1>Elke's fantastic blog</h1>
+		<BlogPost v-for="blogPost in blogPosts" :post="blogPost" :key="blogPost.title" />
 	</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import BlogPost, { Post } from './components/BlogPost.vue';
 
 @Component({
 	components: {
-		HelloWorld,
+		BlogPost,
 	},
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+	private blogPosts: Post[] = [
+		{
+			title: 'My first blogpost ever!',
+			body: 'Lorem ipsum dolor sit amet.',
+			author: 'Elke',
+			datePosted: new Date(2019, 1, 18),
+		},
+		{
+			title: 'Look I am blogging!',
+			body: 'Hurray for me, this is my second post!',
+			author: 'Elke',
+			datePosted: new Date(2019, 1, 19),
+		},
+		{
+			title: 'Another one?!',
+			body: 'Another one!',
+			author: 'Elke',
+			datePosted: new Date(2019, 1, 20),
+		},
+	];
+}
 </script>
 
 <style lang="scss">
