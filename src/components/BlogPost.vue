@@ -1,5 +1,5 @@
 <template>
-	<div class="blogpost">
+	<div class="blogpost" :class="{ highlighted: post.highlighted }">
 		<h2>{{ post.title }}</h2>
 		<p v-if="post.highlighted">This post is highlighted!</p>
 		<p>{{ post.body }}</p>
@@ -30,6 +30,12 @@ export default class BlogPost extends Vue {
 
 <style lang="scss">
 div.blogpost {
+	width: 400px;
+	margin: 0 auto;
+	&.highlighted {
+		border: 1px solid #f4d942;
+		background: #fff3b2;
+	}
 	h2 {
 		text-decoration: underline;
 	}
