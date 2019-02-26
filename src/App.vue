@@ -27,6 +27,7 @@ export default class App extends Vue {
 			body: 'Hurray for me, this is my second post!',
 			author: 'Elke',
 			datePosted: new Date(2019, 1, 19),
+			highlighted: true,
 		},
 		{
 			title: 'Another one?!',

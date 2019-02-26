@@ -1,6 +1,7 @@
 <template>
 	<div class="blogpost">
 		<h2>{{ post.title }}</h2>
+		<p v-if="post.highlighted">This post is highlighted!</p>
 		<p>{{ post.body }}</p>
 		<p class="meta">Written by {{ post.author }} on {{ date }}</p>
 	</div>
@@ -14,6 +15,7 @@ export interface Post {
 	body: string;
 	author: string;
 	datePosted: Date;
+	highlighted?: boolean;
 }
 
 @Component
